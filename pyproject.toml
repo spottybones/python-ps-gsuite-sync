@@ -1,7 +1,12 @@
 [tool.poetry]
 name = "ps-gsuite-sync"
 version = "0.1.0"
-description = ""
+description = "Utilities for syncing student accounts from PowerSchool-SIS to G Suite"
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/spottybones/python-ps-gsuite-sync"
+repository = "https://github.com/spottybones/python-ps-gsuite-sync"
+keywords = ["powerschool", "gsuite", "g-suite"]
 authors = ["Scott Burns <sburns@centercitypcs.org>"]
 
 [tool.poetry.dependencies]
