@@ -11,6 +11,7 @@ authors = ["Scott Burns <sburns@centercitypcs.org>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+click = "^7.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
