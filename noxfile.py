@@ -7,6 +7,19 @@ nox.options.sessions = "lint", "safety", "tests"
 locations = "ps_gsuite_sync", "tests", "noxfile.py"
 
 
+def install_with_constraints(session, *args, **kwargs):
+    with tempfile.NamedTemporaryFile() as requirements:
+        session.run(
+            "poetry",
+            "export",
+            "--dev",
+            "--format=requirements.txt",
+            f"--output={requirements.name}",
+            external=True,
+        )
+        session.install(f"--constraint={requirements.name}", *args, **kwargs)
+
+
 @nox.session
 def tests(session):
     args = session.posargs or ["--cov"]
@@ -17,7 +30,8 @@ def tests(session):
 @nox.session
 def lint(session):
     args = session.posargs or locations
-    session.install(
+    install_with_constraints(
+        session,
         "flake8",
         "flake8-bandit",
         "flake8-black",
@@ -30,7 +44,7 @@ def lint(session):
 @nox.session
 def black(session):
     args = session.posargs or locations
-    session.install("black")
+    install_with_constraints(session, "black")
     session.run("black", *args)
 
 
@@ -46,5 +60,5 @@ def safety(session):
             f"--output={requirements.name}",
             external=True
         )
-        session.install("safety")
+        install_with_constraints(session, "safety")
         session.run("safety", "check", f"--file={requirements.name}", "--full-report")

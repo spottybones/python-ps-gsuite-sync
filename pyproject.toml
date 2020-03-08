@@ -17,6 +17,13 @@ click = "^7.0"
 pytest = "^5.2"
 coverage = {extras = ["toml"], version = "^5.0.3"}
 pytest-cov = "^2.8.1"
+black = "^19.10b0"
+flake8 = "^3.7.9"
+flake8-bandit = "^2.1.2"
+flake8-black = "^0.1.1"
+flake8-bugbear = "^20.1.4"
+flake8-import-order = "^0.18.1"
+safety = "^1.8.5"
 
 [tool.poetry.scripts]
 ps-gsuite-sync = "ps_gsuite_sync.console:main"
