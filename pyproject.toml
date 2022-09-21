@@ -10,7 +10,7 @@ keywords = ["powerschool", "gsuite", "g-suite"]
 authors = ["Scott Burns <sburns@centercitypcs.org>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 click = "^7.0"
 
 [tool.poetry.dev-dependencies]
