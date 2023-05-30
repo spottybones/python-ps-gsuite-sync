@@ -11,23 +11,23 @@ authors = ["Scott Burns <sburns@centercitypcs.org>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-click = "^7.0"
-
-[tool.poetry.dev-dependencies]
-coverage = {extras = ["toml"], version = "^5.0.3"}
-pytest-cov = "^2.8.1"
-black = "^19.10b0"
-flake8 = "^3.7.9"
-flake8-bandit = "^2.1.2"
-flake8-black = "^0.1.1"
-flake8-bugbear = "^20.1.4"
-flake8-import-order = "^0.18.1"
-safety = "^1.8.5"
-pytest-mock = "^2.0.0"
-pytest = "^7.2.0"
+click = "^8.0"
 
 [tool.poetry.scripts]
 ps-gsuite-sync = "ps_gsuite_sync.console:main"
+
+[tool.poetry.group.dev.dependencies]
+pytest-mock = "^3.10.0"
+pytest-cov = "^4.1.0"
+coverage = "^7.2.7"
+pytest = "^7.3.1"
+safety = "^2.3.5"
+black = "^23.3.0"
+flake8 = "^6.0.0"
+flake8-bandit = "^4.1.1"
+flake8-black = "^0.3.6"
+flake8-bugbear = "^23.5.9"
+flake8-import-order = "^0.18.2"
 
 [tool.coverage.paths]
 source = ["ps_gsuite_sync", "*/site-packages"]
